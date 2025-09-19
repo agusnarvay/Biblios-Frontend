@@ -31,7 +31,7 @@ function Login() {
         navigate("/perfil")
       }
     } catch (error) {
-      setError(err.message)
+      setError(error.message)
     }
   }
 
