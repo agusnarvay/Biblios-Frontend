@@ -15,7 +15,7 @@ function Login() {
 
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_EXPRESS}/api/login`,
+        `${import.meta.env.VITE_EXPRESS}/api/usuarios/login`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -52,7 +52,7 @@ function Login() {
         <div>
           <label htmlFor="contrasena">Contrasena</label>
           <input
-            type="contrasena"
+            type="password"
             id="contrasena"
             value={contrasena}
             onChange={(e) => setContrasena(e.target.value)}
