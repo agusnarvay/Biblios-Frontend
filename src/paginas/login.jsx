@@ -25,11 +25,10 @@ function Login() {
       const data = await response.json()
 
       if (!response.ok) {
-        new Error(data.message || "Error al iniciar sesión")
-
-        console.log("Login exitoso:", data)
-        navigate("/perfil")
+        throw new Error(data.message || "Error al iniciar sesión")
       }
+      console.log("Login exitoso:", data)
+      navigate("/perfil")
     } catch (error) {
       setError(error.message)
     }
