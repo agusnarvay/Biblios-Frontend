@@ -59,6 +59,7 @@ function Login() {
             required
           />
         </div>
+        <button type="submit">Ingresar</button>
       </form>
       {error && <p className="error-msg">{error}</p>}
     </div>
