@@ -9,13 +9,15 @@ function Login() {
 
   const navigate = useNavigate()
 
+  console.log("La URL de la Api es:", import.meta.env.VITE_EXPRESS)
+
   const enviarFormulario = async (e) => {
     e.preventDefault()
     setError(null)
 
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/usuarios/login`,
+        `${import.meta.env.VITE_EXPRESS}/api/usuarios/login`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
