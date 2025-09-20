@@ -25,7 +25,9 @@ function App() {
                 <NavLink to="/explorar">Explorar</NavLink>
               </li>
               <li>
-                <button className="login">Iniciar sesión</button>
+                <NavLink to="/login">
+                  <button className="login">Iniciar sesión</button>
+                </NavLink>
               </li>
             </ul>
           </div>
