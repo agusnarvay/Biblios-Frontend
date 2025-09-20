@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom"
 import logo from "../assets/logo.png"
+import Login from "../paginas/login"
+import "../estilos/navbar.css"
 
 export function Navbar() {
   return (
@@ -17,8 +19,8 @@ export function Navbar() {
             <NavLink to="/explorar">Explorar</NavLink>
           </li>
           <li>
-            <NavLink to="/login">
-              <button className="login">Iniciar sesión</button>
+            <NavLink to="/login" className="login">
+              Iniciar sesión
             </NavLink>
           </li>
         </ul>
