@@ -5,33 +5,13 @@ import { Explorar } from "./paginas/explorar"
 import { Perfil } from "./paginas/perfil"
 import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom"
 import Login from "./paginas/login"
-import logo from "./assets/LOGO.png"
+import { Navbar } from "./componentes/navbar"
 
 function App() {
   return (
     <BrowserRouter>
       <>
-        <header className="menu-principal">
-          <div className="menu-contenedor">
-            <img src={logo} alt="LOGO" className="logo" />
-            <ul className="menu-lista">
-              <li>
-                <NavLink to="/">Inicio</NavLink>
-              </li>
-              <li>
-                <NavLink to="/perfil">Mi perfil</NavLink>
-              </li>
-              <li>
-                <NavLink to="/explorar">Explorar</NavLink>
-              </li>
-              <li>
-                <NavLink to="/login">
-                  <button className="login">Iniciar sesión</button>
-                </NavLink>
-              </li>
-            </ul>
-          </div>
-        </header>
+        <Navbar />
 
         <Routes>
           <Route path="/" element={<Inicio />}></Route>
