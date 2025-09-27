@@ -4,58 +4,57 @@
   box-sizing: border-box;
 }
 .menu-principal {
-  position: fixed;
-  height: 5rem;
-  top: 0;
-  background-color: #ffffff;
+  background-color: white;
+  height: 80px;
   display: flex;
+  justify-content: center;
   align-items: center;
-  z-index: 1;
+  padding: 0 2.5rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
+
 .menu-contenedor {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  margin: 0 auto;
-  padding: 0 2rem;
+  align-items: center;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1300px;
+  margin: 0 auto;
 }
+
 .logo {
-  max-height: 80px;
+  height: 70px;
 }
+
 .menu-lista {
   display: flex;
   align-items: center;
-  margin: 0;
-  padding: 0;
-  gap: 2rem;
+  gap: 3rem;
   list-style: none;
 }
-.menu-lista li {
-  display: flex;
-  align-items: center;
-}
-.menu-lista li a {
+
+.menu-lista a {
   font-family: "Poppins", sans-serif;
   text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: black;
-}
-.login {
-  background-color: #316ab8;
-  color: white;
-  border: none;
-  font-size: 0.9rem;
-  font-family: "Poppins", sans-serif;
-  margin-right: 2rem;
-  padding: 0.4rem 1rem;
-  border-radius: 20px;
-  cursor: pointer;
+  color: #003049;
+  font-weight: 400;
+  font-size: 1rem;
+  transition: color 0.2s ease-in-out;
 }
 
-.login:hover {
-  background-color: #092b59;
-  transform: scale(1.05);
+.menu-lista a:hover,
+.menu-lista a.active {
+  color: #669bbc;
+}
+
+.login {
+  padding: 0.5rem 1.2rem;
+  background-color: white;
+  border-radius: 10px;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  border: 1px solid #003049;
 }

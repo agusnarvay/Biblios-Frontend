@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom"
 import Login from "../paginas/login"
 import "../estilos/navbar.css"
-import logo from "../assets/LOGO.png"
+import logo from "../assets/logoBiblios.png"
 
 export function Navbar() {
   return (
