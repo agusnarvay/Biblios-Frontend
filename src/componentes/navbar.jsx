@@ -37,7 +37,11 @@ export function Navbar() {
             </NavLink>
           </li>
         </ul>
-        <NavLink to="/login" className={`login`} onClick={Login}>
+        <NavLink
+          to="/login"
+          className={`login ${menuAbierto ? "login-mobile-activo" : ""}`}
+          onClick={Login}
+        >
           Iniciar sesión
         </NavLink>
       </div>
