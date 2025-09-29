@@ -13,6 +13,7 @@
   position: fixed;
   top: 0;
   width: 100%;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .menu-contenedor {
@@ -33,6 +34,12 @@
   align-items: center;
   gap: 3rem;
   list-style: none;
+  position: static;
+  transform: translateX((0%));
+  background-color: transparent;
+  height: auto;
+  box-shadow: none;
+  flex-direction: row;
 }
 
 .menu-lista a {
@@ -42,6 +49,7 @@
   font-weight: 400;
   font-size: 1rem;
   transition: color 0.2s ease-in-out;
+  flex-wrap: nowrap;
 }
 
 .menu-lista a:hover,
@@ -50,11 +58,156 @@
 }
 
 .login {
-  padding: 0.5rem 1.2rem;
-  background-color: white;
+  font-family: "Poppins", sans-serif;
+  display: inline-block;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  color: #e9f5ff;
+  background-color: #003049;
   border-radius: 10px;
-  font-weight: 500;
+  font-weight: 300;
   transition: all 0.2s ease-in-out;
-  position: relative;
-  border: 1px solid #003049;
+  text-decoration: none;
+  flex-wrap: nowrap;
+}
+.login:hover {
+  color: #e9f5ff;
+  background-color: #669bbc;
+}
+.login.active {
+  color: #e9f5ff;
+}
+.menu-hamburguesa {
+  display: none;
+  color: #003049;
+}
+
+@media (max-width: 992px) {
+  .menu-principal {
+    padding: 0 1.5rem;
+  }
+  .menu-contenedor {
+    gap: 1rem;
+  }
+  .logo {
+    height: 65px;
+  }
+  .menu-lista {
+    gap: 2rem;
+  }
+  .menu-lista a {
+    font-size: 0.95rem;
+  }
+  .login {
+    padding: 0.5rem 1.5em;
+    font-size: 0.95rem;
+  }
+}
+@media (max-width: 768px) {
+  .menu-principal {
+    height: 65px;
+    padding: 0 1rem;
+  }
+  .logo {
+    height: 60px;
+  }
+
+  .menu-hamburguesa {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 25px;
+    height: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1;
+  }
+  .menu-hamburguesa .barra {
+    width: 100%;
+    height: 2.5px;
+    background-color: #003049;
+    border-radius: 10px;
+    transition: all 0.3s linear;
+  }
+  .menu-lista {
+    position: fixed;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 65px);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2rem 0;
+    gap: 3rem;
+    transform: translateX(100%);
+    z-index: 1;
+  }
+  .menu-lista.activo {
+    transform: translateX(0);
+    height: 100vh;
+    background-color: #e9f5ff;
+  }
+  .login {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0.3rem 0.6rem;
+    font-size: 1rem;
+  }
+
+  .menu-lista a {
+    font-size: 1.2rem;
+    width: 80%;
+    text-align: center;
+    padding: 0.7rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-principal {
+    height: 60px;
+    padding: 0.5rem 0.5rem;
+  }
+  .menu-contenedor {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+    width: 100%;
+  }
+  .logo {
+    height: 45px;
+    width: auto;
+  }
+  .menu-contenedor .login {
+    display: none;
+  }
+  .menu-hamburguesa {
+    width: 20px;
+    height: 15px;
+  }
+  .menu-hamburguesa .barra {
+    height: 2px;
+  }
+  .menu-contenedor a {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+  }
+  .menu-lista {
+    top: 55px;
+    height: (100vh - 55px);
+    padding-top: 1.5rem;
+    gap: 1.5rem;
+  }
+  .menu-lista a {
+    font-size: 1rem;
+  }
 }
