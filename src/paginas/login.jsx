@@ -1,5 +1,7 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import "../estilos/login.css"
+import logo from "../assets/logoBiblios.png"
 
 function Login() {
   //Los uso para guardar lo que el usuario escribe
@@ -37,32 +39,41 @@ function Login() {
   }
 
   return (
-    <div className="contenedor-login">
-      <h2>Iniciar sesión</h2>
-      <form onSubmit={enviarFormulario}>
-        <div>
-          <label htmlFor="usuario">Usuario</label>
-          <input
-            type="text"
-            id="usuario"
-            value={usuario}
-            onChange={(e) => setUsuario(e.target.value)}
-            required
-          />
+    <div className="login-container">
+      <div className="login-header">
+        <img src={logo} alt="BIBLIOS logo" className="login-logo" />
+        <h1>Inicia sesión en tu cuenta</h1>
+        <div className="login-card">
+          <form onSubmit={enviarFormulario} className="login-form">
+            <div className="group-input">
+              <label htmlFor="usuario">Usuario</label>
+              <input
+                type="text"
+                id="usuario"
+                value={usuario}
+                onChange={(e) => setUsuario(e.target.value)}
+                placeholder="Ingresa tu nombre de usuario"
+                required
+              />
+            </div>
+            <div className="group-input">
+              <label htmlFor="contrasena">Contrasena</label>
+              <input
+                type="password"
+                id="contrasena"
+                value={contrasena}
+                onChange={(e) => setContrasena(e.target.value)}
+                placeholder="Ingresa tu contraseña"
+                required
+              />
+            </div>
+            <button type="submit" className="login-button">
+              Ingresar
+            </button>
+            {error && <p className="error-msg">{error}</p>}
+          </form>
         </div>
-        <div>
-          <label htmlFor="contrasena">Contrasena</label>
-          <input
-            type="password"
-            id="contrasena"
-            value={contrasena}
-            onChange={(e) => setContrasena(e.target.value)}
-            required
-          />
-        </div>
-        <button type="submit">Ingresar</button>
-      </form>
-      {error && <p className="error-msg">{error}</p>}
+      </div>
     </div>
   )
 }
