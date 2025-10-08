@@ -39,13 +39,13 @@ function Login() {
   }
 
   return (
-    <div className="login-container">
+    <div className="login-contenedor">
       <div className="login-header">
         <img src={logo} alt="BIBLIOS logo" className="login-logo" />
         <h1>Inicia sesión en tu cuenta</h1>
-        <div className="login-card">
+        <div className="login-tarjeta">
           <form onSubmit={enviarFormulario} className="login-form">
-            <div className="group-input">
+            <div className="input">
               <label htmlFor="usuario">Usuario</label>
               <input
                 type="text"
@@ -56,7 +56,7 @@ function Login() {
                 required
               />
             </div>
-            <div className="group-input">
+            <div className="input">
               <label htmlFor="contrasena">Contrasena</label>
               <input
                 type="password"
@@ -67,10 +67,10 @@ function Login() {
                 required
               />
             </div>
-            <button type="submit" className="login-button">
+            <button type="submit" className="login-boton">
               Ingresar
             </button>
-            {error && <p className="error-msg">{error}</p>}
+            {error && <p className="error-msj">{error}</p>}
           </form>
         </div>
       </div>

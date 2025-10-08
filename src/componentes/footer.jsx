@@ -1,17 +1,16 @@
-import React from "react"
 import { NavLink } from "react-router-dom"
 import logo from "../assets/logoblanco.png"
 import "../estilos/footer.css"
 
 export function Footer() {
   return (
-    <footer className="footer-main">
-      <div className="footer-container">
-        <div className="column1">
+    <footer className="footer-p">
+      <div className="footer-contenedor">
+        <div className="columna1">
           <img src={logo} alt="logo biblios" className="footer-logo" />
         </div>
-        <div className="column2">
-          <ul className="footer-list">
+        <div className="columna2">
+          <ul className="footer-lista">
             <li>
               <NavLink to="/">Inicio</NavLink>
             </li>
