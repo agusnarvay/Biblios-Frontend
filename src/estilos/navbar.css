@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-.menu-principal {
+.menu-main {
   background-color: white;
   height: 80px;
   display: flex;
@@ -16,7 +16,7 @@
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-.menu-contenedor {
+.menu-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,7 +29,7 @@
   height: 70px;
 }
 
-.menu-lista {
+.menu-list {
   display: flex;
   align-items: center;
   gap: 3rem;
@@ -42,7 +42,7 @@
   flex-direction: row;
 }
 
-.menu-lista a {
+.menu-list a {
   font-family: "Poppins", sans-serif;
   text-decoration: none;
   color: #003049;
@@ -52,8 +52,8 @@
   flex-wrap: nowrap;
 }
 
-.menu-lista a:hover,
-.menu-lista a.active {
+.menu-list a:hover,
+.menu-list a.active {
   color: #669bbc;
 }
 
@@ -77,25 +77,25 @@
 .login.active {
   color: #e9f5ff;
 }
-.menu-hamburguesa {
+.menu-hamburger {
   display: none;
   color: #003049;
 }
 
 @media (max-width: 992px) {
-  .menu-principal {
+  .menu-main {
     padding: 0 1.5rem;
   }
-  .menu-contenedor {
+  .menu-container {
     gap: 1rem;
   }
   .logo {
     height: 65px;
   }
-  .menu-lista {
+  .menu-list {
     gap: 2rem;
   }
-  .menu-lista a {
+  .menu-list a {
     font-size: 0.95rem;
   }
   .login {
@@ -104,7 +104,7 @@
   }
 }
 @media (max-width: 768px) {
-  .menu-principal {
+  .menu-main {
     height: 65px;
     padding: 0 1rem;
   }
@@ -112,7 +112,7 @@
     height: 60px;
   }
 
-  .menu-hamburguesa {
+  .menu-hamburger {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -124,14 +124,14 @@
     padding: 0;
     z-index: 1;
   }
-  .menu-hamburguesa .barra {
+  .menu-hamburger .bar {
     width: 100%;
     height: 2.5px;
     background-color: #003049;
     border-radius: 10px;
     transition: all 0.3s linear;
   }
-  .menu-lista {
+  .menu-list {
     position: fixed;
     top: 65px;
     left: 0;
@@ -145,7 +145,7 @@
     transform: translateX(100%);
     z-index: 1;
   }
-  .menu-lista.activo {
+  .menu-list.activo {
     transform: translateX(0);
     height: 100vh;
     background-color: #e9f5ff;
@@ -158,7 +158,7 @@
     font-size: 1rem;
   }
 
-  .menu-lista a {
+  .menu-list a {
     font-size: 1.2rem;
     width: 80%;
     text-align: center;
@@ -167,11 +167,11 @@
 }
 
 @media (max-width: 480px) {
-  .menu-principal {
+  .menu-main {
     height: 60px;
     padding: 0.5rem 0.5rem;
   }
-  .menu-contenedor {
+  .menu-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -183,17 +183,17 @@
     height: 45px;
     width: auto;
   }
-  .menu-contenedor .login {
+  .menu-container .login {
     display: none;
   }
-  .menu-hamburguesa {
+  .menu-hamburger {
     width: 20px;
     height: 15px;
   }
-  .menu-hamburguesa .barra {
+  .menu-hamburger .bar {
     height: 2px;
   }
-  .menu-contenedor a {
+  .menu-container a {
     padding: 0;
     margin: 0;
     display: flex;
@@ -201,13 +201,13 @@
     align-items: center;
     width: 100%;
   }
-  .menu-lista {
+  .menu-list {
     top: 55px;
     height: (100vh - 55px);
     padding-top: 1.5rem;
     gap: 1.5rem;
   }
-  .menu-lista a {
+  .menu-list a {
     font-size: 1rem;
   }
 }

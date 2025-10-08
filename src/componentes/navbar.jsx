@@ -10,17 +10,17 @@ export function Navbar() {
     setMenuAbierto(!menuAbierto)
   }
   return (
-    <header className="menu-principal">
-      <div className="menu-contenedor">
+    <header className="menu-main">
+      <div className="menu-container">
         <NavLink to="/" onClick={() => setMenuAbierto(false)}>
           <img src={logo} alt="LOGO" className="logo" />
         </NavLink>
-        <button className="menu-hamburguesa" onClick={toggleMenu}>
-          <span className="barra"></span>
-          <span className="barra"></span>
-          <span className="barra"></span>
+        <button className="menu-hamburger" onClick={toggleMenu}>
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
         </button>
-        <ul className={`menu-lista ${menuAbierto ? "activo" : ""}`}>
+        <ul className={`menu-list ${menuAbierto ? "activo" : ""}`}>
           <li>
             <NavLink to="/" onClick={toggleMenu}>
               Inicio
