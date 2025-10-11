@@ -12,6 +12,8 @@ import {
 import Login from "./paginas/login"
 import { Navbar } from "./componentes/navbar"
 import { Footer } from "./componentes/footer"
+import { ProveedorLogin } from "./contexto/contexto-login"
+import { RutaPerfil } from "./ruta-perfil"
 
 /*Lo utilice para manejar la lógical del menú - para que no sea visible en /login*/
 
@@ -23,31 +25,41 @@ function Layout() {
   const noMenuRoutes = ["/login"]
 
   const showNavBar = !noMenuRoutes.includes(location.pathname)
+  {
+    /*Se renderiza la navBar solo cuando el showNavbar es true */
+  }
 
   return (
-    <>
-      {/*Se renderiza la navBar solo cuando el showNavbar es true */}
-
+    <div className="contenedor-app">
       {showNavBar && <Navbar />}
-      <div className="main-content">
+      <div className="contenedor-p">
         <Routes>
           <Route path="/" element={<Inicio />}></Route>
           <Route path="/explorar" element={<Explorar />}></Route>
-          <Route path="/perfil" element={<Perfil />}></Route>
+          <Route
+            path="/perfil"
+            element={
+              <RutaPerfil>
+                <Perfil />
+              </RutaPerfil>
+            }
+          ></Route>
           <Route path="/login" element={<Login />}></Route>
         </Routes>
       </div>
 
-      <Footer />
-    </>
+      {showNavBar && <Footer />}
+    </div>
   )
 }
 function App() {
   return (
     <BrowserRouter>
-      <>
+      {/*Ahora todos tienen acceso al contexto creado */}
+
+      <ProveedorLogin>
         <Layout /> {/*Aquí se aplica la logica condicional*/}
-      </>
+      </ProveedorLogin>
     </BrowserRouter>
   )
 }

@@ -124,7 +124,7 @@
     padding: 0;
     z-index: 1;
   }
-  .menu-hamburguesa .bar {
+  .menu-hamburguesa .barra {
     width: 100%;
     height: 2.5px;
     background-color: #003049;
@@ -190,7 +190,7 @@
     width: 20px;
     height: 15px;
   }
-  .menu-hamburguesa .bar {
+  .menu-hamburguesa .barra {
     height: 2px;
   }
   .menu-contenedor a {
@@ -203,7 +203,7 @@
   }
   .menu-lista {
     top: 55px;
-    height: (100vh - 55px);
+    height: calc(100vh - 55px);
     padding-top: 1.5rem;
     gap: 1.5rem;
   }

@@ -1,13 +1,25 @@
-import { NavLink } from "react-router-dom"
-import Login from "../paginas/login"
+import { NavLink, useNavigate } from "react-router-dom"
 import "../estilos/navbar.css"
 import logo from "../assets/logoBiblios.png"
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { ContextoLogin } from "../contexto/contexto-login"
 
 export function Navbar() {
   const [menuAbierto, setMenuAbierto] = useState(false)
   const toggleMenu = () => {
     setMenuAbierto(!menuAbierto)
+  }
+
+  const { estaLogueado, usuario, cerrarSesion } = useContext(ContextoLogin)
+  const navigate = useNavigate()
+
+  const cierreSesion = () => {
+    console.log("Ejecutando el cierre y dirije a inicio")
+    navigate("/")
+    setTimeout(() => {
+      cerrarSesion()
+      setMenuAbierto(false)
+    }, 50)
   }
   return (
     <header className="menu-p">
@@ -26,24 +38,41 @@ export function Navbar() {
               Inicio
             </NavLink>
           </li>
-          <li>
-            <NavLink to="/perfil" onClick={toggleMenu}>
-              Mi perfil
-            </NavLink>
-          </li>
+          {estaLogueado && (
+            <li>
+              <NavLink to="/perfil" onClick={toggleMenu}>
+                Mi perfil
+              </NavLink>
+            </li>
+          )}
+
           <li>
             <NavLink to="/explorar" onClick={toggleMenu}>
               Explorar
             </NavLink>
           </li>
         </ul>
-        <NavLink
-          to="/login"
-          className={`login ${menuAbierto ? "login-mobile-activo" : ""}`}
-          onClick={Login}
+        <div
+          className={`navbar-login-click ${
+            menuAbierto ? "login-mobile-activo" : ""
+          }`}
         >
-          Iniciar sesión
-        </NavLink>
+          {estaLogueado ? (
+            <button onClick={cierreSesion} className="login">
+              Cerrar Sesión
+            </button>
+          ) : (
+            <NavLink
+              to="/login"
+              className="login"
+              onClick={() => {
+                setMenuAbierto(false)
+              }}
+            >
+              Iniciar sesión
+            </NavLink>
+          )}
+        </div>
       </div>
     </header>
   )

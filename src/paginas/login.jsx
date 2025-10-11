@@ -1,7 +1,10 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { ContextoLogin } from "../contexto/contexto-login"
 import "../estilos/login.css"
 import logo from "../assets/logoBiblios.png"
+
+//Este es el apartado del login/iniciar sesión para los usuarios. Consta de un bloque para ingresar usuario y contraseña y un botón submit para enviar esa información e ingresar al perfil del usuario. Se creó el usuario con Postman.
 
 function Login() {
   //Los uso para guardar lo que el usuario escribe
@@ -11,27 +14,34 @@ function Login() {
 
   const navigate = useNavigate()
 
-  console.log("La URL de la Api es:", import.meta.env.VITE_EXPRESS)
+  const { iniciarSesion } = useContext(ContextoLogin)
+
+  const URL_API_EXPRESS = import.meta.env.VITE_EXPRESS
 
   const enviarFormulario = async (e) => {
     e.preventDefault()
     setError(null)
 
     try {
-      const response = await fetch(
-        `${import.meta.env.VITE_EXPRESS}/api/usuarios/login`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ usuario, contrasena }),
-        }
-      )
-      const data = await response.json()
+      const respuesta = await fetch(`${URL_API_EXPRESS}/api/usuarios/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ usuario, contrasena }),
+      })
+      const datosRespuesta = await respuesta.json()
 
-      if (!response.ok) {
-        throw new Error(data.message || "Error al iniciar sesión")
+      if (!respuesta.ok) {
+        throw new Error(
+          datosRespuesta.message ||
+            "Error al iniciar sesión. Nombre de usuario o contraseña incorrectos."
+        )
       }
-      console.log("Login exitoso:", data)
+      console.log(
+        "Login exitoso: guardando datos en localStorage",
+        datosRespuesta
+      )
+      iniciarSesion(datosRespuesta)
+
       navigate("/perfil")
     } catch (error) {
       setError(error.message)
