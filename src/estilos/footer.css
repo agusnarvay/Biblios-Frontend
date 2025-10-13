@@ -61,10 +61,10 @@
 
 @media (max-width: 992px) {
   .footer-p {
-    padding: 3rem 0;
+    padding: 1.3rem 0;
   }
   .footer-contenedor {
-    padding: 0 1.5rem;
+    padding: 0 3rem;
   }
   .footer-logo {
     width: 110px;
@@ -79,8 +79,8 @@
 }
 
 @media (max-width: 768px) {
-  .footer-main {
-    padding: 2.5rem 0;
+  .footer-p {
+    padding: 0.8rem 0;
   }
   .footer-logo {
     width: 100px;

@@ -1,5 +1,5 @@
 import React, { useContext } from "react"
-import { ContextoLogin } from "./contexto/contexto-login"
+import { ContextoLogin } from "./contexto/ContextoLogin"
 import { Navigate } from "react-router-dom"
 
 export const RutaPerfil = ({ children }) => {

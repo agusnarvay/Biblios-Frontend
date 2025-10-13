@@ -12,8 +12,8 @@ import {
 import Login from "./paginas/login"
 import { Navbar } from "./componentes/navbar"
 import { Footer } from "./componentes/footer"
-import { ProveedorLogin } from "./contexto/contexto-login"
-import { RutaPerfil } from "./ruta-perfil"
+import { ProveedorLogin } from "./contexto/ContextoLogin"
+import { RutaPerfil } from "./RutaPerfil"
 
 /*Lo utilice para manejar la lógical del menú - para que no sea visible en /login*/
 

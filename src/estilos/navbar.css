@@ -69,6 +69,7 @@
   transition: all 0.2s ease-in-out;
   text-decoration: none;
   flex-wrap: nowrap;
+  border: none;
 }
 .login:hover {
   color: #e9f5ff;
@@ -76,6 +77,9 @@
 }
 .login.active {
   color: #e9f5ff;
+}
+.login:focus {
+  outline: none;
 }
 .menu-hamburguesa {
   display: none;

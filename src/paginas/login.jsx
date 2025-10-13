@@ -1,6 +1,6 @@
 import { useContext, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { ContextoLogin } from "../contexto/contexto-login"
+import { ContextoLogin } from "../contexto/ContextoLogin"
 import "../estilos/login.css"
 import logo from "../assets/logoBiblios.png"
 

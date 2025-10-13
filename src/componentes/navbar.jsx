@@ -2,7 +2,7 @@ import { NavLink, useNavigate } from "react-router-dom"
 import "../estilos/navbar.css"
 import logo from "../assets/logoBiblios.png"
 import { useContext, useState } from "react"
-import { ContextoLogin } from "../contexto/contexto-login"
+import { ContextoLogin } from "../contexto/ContextoLogin"
 
 export function Navbar() {
   const [menuAbierto, setMenuAbierto] = useState(false)
