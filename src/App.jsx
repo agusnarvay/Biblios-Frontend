@@ -10,10 +10,10 @@ import {
   useLocation,
 } from "react-router-dom"
 import Login from "./paginas/login"
-import { Navbar } from "./componentes/navbar"
-import { Footer } from "./componentes/footer"
+import { Navbar } from "./componentes/Navbar"
+import { Footer } from "./componentes/Footer"
 import { ProveedorLogin } from "./contexto/ContextoLogin"
-import { RutaPerfil } from "./RutaPerfil"
+import { RutaPerfil } from "./componentes/RutaPerfil"
 
 /*Lo utilice para manejar la lógical del menú - para que no sea visible en /login*/
 

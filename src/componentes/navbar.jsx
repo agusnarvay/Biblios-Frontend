@@ -27,6 +27,7 @@ export function Navbar() {
         <NavLink to="/" onClick={() => setMenuAbierto(false)}>
           <img src={logo} alt="LOGO" className="logo" />
         </NavLink>
+
         <button className="menu-hamburguesa" onClick={toggleMenu}>
           <span className="barra"></span>
           <span className="barra"></span>

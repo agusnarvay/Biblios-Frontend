@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from "react"
 import { ContextoLogin } from "../contexto/ContextoLogin"
 import "../estilos/perfil.css"
+import { CardLibro } from "../componentes/CardLibro"
 
 //página del perfil del usuario -> todos los usuarios tienen su propia página de perfil.
 
@@ -11,16 +12,16 @@ export function Perfil() {
   const formAgregarLibro = useRef()
 
   useEffect(() => {
-    console.log("useEffect funciona", usuario)
     if (usuario && usuario._id) getLibros() //se cargan los libros solo cuando está el usuario logueado
   }, [usuario])
 
   const getLibros = async () => {
+    if (!usuario) return
     const response = await fetch(
       `${VITE_EXPRESS}/api/libros?usuarioId=${usuario._id}`
     )
     const data = await response.json()
-    setLibros(data.data)
+    setLibros(data.data || data)
   }
 
   const postLibro = async (e) => {
@@ -51,29 +52,19 @@ export function Perfil() {
     formAgregarLibro.current.reset()
   }
 
-  const deleteLibro = async (id) => {
-    const options = { method: "DELETE" }
-    await fetch(`${VITE_EXPRESS}/api/libros/${id}`, options)
-
-    getLibros()
-  }
-
   return (
-    <>
-      <div className="perfil-pagina">
-        <div className="encabezado-perfil">
-          {usuario && <h1>Bienvenido, {usuario.usuario} 📚</h1>}
-          <p>
-            Estás en tu centro de mando. Añade los libros que estás leyendo, los
-            que te han marcado o los que sueñas con leer. Tu biblioteca personal
-            empieza aquí.
-          </p>
-          <h2>
-            Añadir un nuevo <span>libro</span>
-          </h2>
-        </div>
+    <div className="perfil-pagina">
+      <div className="encabezado-perfil">
+        {usuario && <h1>Bienvenido, {usuario.usuario} 👋🏼</h1>}
+        <p>
+          Estás en tu centro de mando. Añade los libros que estás leyendo, los
+          que te han marcado o los que sueñas con leer. Tu biblioteca personal
+          empieza aquí.
+        </p>
+        <h2>
+          Añade tu <span>libro</span> 📚
+        </h2>
       </div>
-
       <form ref={formAgregarLibro} onSubmit={postLibro} className="form-libro">
         <div className="fila-form">
           <input type="text" name="titulo" placeholder="Título" required />
@@ -88,12 +79,15 @@ export function Perfil() {
             required
           />
         </div>
-        <input
-          type="text"
-          name="portadaUrl"
-          placeholder="URL de la portada"
-          required
-        />
+        <div className="portada">
+          <input
+            type="text"
+            name="portadaUrl"
+            placeholder="URL de la portada"
+            required
+          />
+        </div>
+
         <div className="fila-form">
           <textarea name="sinopsis" placeholder="Sinopsis"></textarea>
         </div>
@@ -103,23 +97,17 @@ export function Perfil() {
         </div>
         <input type="submit" value="Añadir libro" />
       </form>
-      {/*
-        <h1>Mi colección</h1>
-      <ul>
-        {libros.length === 0 && <li>No hay libros en tu colección</li>}
-        {libros.map((libro) => (
-          <li key={libro._id}>
-            <span>
-              {libro.titulo} por {libro.autor}
-            </span>
-            <button onClick={() => deleteLibro(libro._id)}>
-              Eliminar libro
-            </button>
-          </li>
-        ))}
-      </ul>
-   */}
-    </>
+      <div className="coleccion-contenedor">
+        <h2>Mi colección</h2>
+        <div className="contenedor-libros">
+          {libros.length > 0 ? (
+            libros.map((libro) => <CardLibro key={libro._id} libro={libro} />)
+          ) : (
+            <p>Aún no tienes libros en tu colección</p>
+          )}
+        </div>
+      </div>
+    </div>
   )
 }
 

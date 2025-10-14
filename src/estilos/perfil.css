@@ -4,10 +4,9 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-.pagina-perfil {
+.perfil-pagina {
   max-width: 1100px;
-  margin: 40px auto;
-  padding: 0 20px;
+  margin: 0 auto;
 }
 .encabezado-perfil {
   max-width: 100%;
@@ -22,6 +21,7 @@
 }
 
 .encabezado-perfil p {
+  font-size: 1.1rem;
   line-height: 1.5;
   max-width: 800px;
   color: #555;
@@ -35,9 +35,9 @@
   flex-direction: column;
   padding: 40px;
   gap: 1.5rem;
-  background-color: #f9fbfd;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.09);
+  transition: all 0.3s ease;
 }
 
 .encabezado-perfil h2 {
@@ -75,6 +75,12 @@
   min-height: 100px;
   resize: vertical;
 }
+.portada input[type="text"] {
+  width: 100%;
+}
+.form-libro ::placeholder {
+  padding-left: 10px;
+}
 
 .form-libro input:focus,
 .form-libro textarea:focus {
@@ -101,6 +107,7 @@
   text-decoration: none;
   border: none;
   font-size: 0.9rem;
+  width: auto;
 }
 
 .form-libro input[type="submit"]:hover {
@@ -112,4 +119,153 @@
 }
 .form-libro input[type="submit"]:active {
   transform: translateY(1px);
+}
+
+.contenedor-libros {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 0 60px;
+  justify-content: center;
+}
+
+.coleccion-contenedor h2 {
+  width: 100%;
+  text-align: center;
+  padding: 2rem;
+  font-weight: 600;
+  color: #003049;
+}
+
+@media (max-width: 992px) {
+  .pagina-perfil {
+    padding: 0 30px;
+  }
+  .encabezado-perfil h1 {
+    font-size: 1.8rem;
+    padding: 2rem;
+  }
+
+  .encabezado-perfil h2 {
+    font-size: 1.4rem;
+    padding: 1.5rem;
+  }
+  .encabezado-perfil p {
+    max-width: 600px;
+    font-size: 1rem;
+  }
+
+  .form-libro {
+    padding: 30px 20px;
+    gap: 1.2rem;
+    max-width: 95%;
+  }
+
+  .fila-form {
+    gap: 20px;
+  }
+  .form-libro input[type="text"],
+  .form-libro input[type="number"],
+  .form-libro textarea {
+    font-size: 0.9rem;
+  }
+  .form-libro input[type="submit"] {
+    padding: 0.9rem 1.8rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .pagina-perfil {
+    padding: 0 15px;
+    margin: 15px auto;
+  }
+  .encabezado-perfil h1 {
+    font-size: 1.5rem;
+    padding: 1.5rem 1rem;
+  }
+  .encabezado-perfil p {
+    font-size: 0.9rem;
+    padding: 0 1rem;
+  }
+
+  .encabezado h2 {
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+
+  .form-libro {
+    padding: 20px 15px;
+    gap: 1rem;
+    border-radius: 8px;
+  }
+
+  .fila-form {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .form-libro input[type="text"],
+  .form-libro input[type="number"],
+  .form-libro textarea {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 0.95rem;
+  }
+  .form-libro input[type="submit"] {
+    padding: 0.8rem 1.6rem;
+    font-size: 0.8rem;
+  }
+
+  .form-libro textarea {
+    min-height: 80px;
+  }
+
+  .form-leido {
+    font-size: 0.7rem;
+    gap: 10px;
+  }
+}
+@media (max-width: 480px) {
+  .pagina-perfil {
+    padding: 0 10px;
+    margin: 10px auto;
+  }
+
+  .encabezado-perfil h1 {
+    font-size: 1.3rem;
+    padding: 1rem 0.5rem;
+  }
+
+  .encabezado-perfil p {
+    font-size: 0.7rem;
+  }
+  .encabezado-perfil h2 {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+
+  .form-libro {
+    padding: 15px 10px;
+    gap: 0.8rem;
+  }
+
+  .fila-form {
+    gap: 12px;
+  }
+
+  .form-libro input[type="text"],
+  .form-libro input[type="number"],
+  .form-libro textarea {
+    padding: 12px 0;
+    font-size: 0.85rem;
+  }
+
+  .form-libro input[type="submit"] {
+    padding: 0.7rem 1.4rem;
+    font-size: 0.75rem;
+  }
+
+  .form-leido {
+    font-size: 0.6rem;
+  }
 }

@@ -50,6 +50,9 @@
   font-size: 1rem;
   transition: color 0.2s ease-in-out;
   flex-wrap: nowrap;
+  white-space: nowrap;
+  overflow: hidden;
+  min-width: 80px;
 }
 
 .menu-lista a:hover,
@@ -68,8 +71,10 @@
   font-weight: 300;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
-  flex-wrap: nowrap;
   border: none;
+  min-width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .login:hover {
   color: #e9f5ff;
@@ -84,6 +89,11 @@
 .menu-hamburguesa {
   display: none;
   color: #003049;
+}
+.menu-derecha {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 @media (max-width: 992px) {
@@ -101,10 +111,14 @@
   }
   .menu-lista a {
     font-size: 0.95rem;
+    min-width: 70px;
   }
   .login {
     padding: 0.5rem 1.5em;
     font-size: 0.95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    min-width: 90px;
   }
 }
 @media (max-width: 768px) {
@@ -164,9 +178,12 @@
 
   .menu-lista a {
     font-size: 1.2rem;
+    min-width: 60px;
     width: 80%;
     text-align: center;
-    padding: 0.7rem 0;
+    padding: 0.6rem 1.2rem;
+    overflow: hidden;
+    white-space: nowrap;
   }
 }
 
@@ -180,38 +197,52 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 0;
+    gap: 0.5rem;
     width: 100%;
   }
   .logo {
     height: 45px;
     width: auto;
   }
-  .menu-contenedor .login {
-    display: none;
-  }
+
   .menu-hamburguesa {
     width: 20px;
     height: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
   }
+
   .menu-hamburguesa .barra {
     height: 2px;
   }
-  .menu-contenedor a {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-  }
+
   .menu-lista {
-    top: 55px;
+    top: 60px;
     height: calc(100vh - 55px);
     padding-top: 1.5rem;
     gap: 1.5rem;
+    align-items: center;
   }
   .menu-lista a {
     font-size: 1rem;
+    padding: 0.5rem 1rem;
+    min-width: 50px;
+    width: 100%;
+    text-align: center;
+    padding: 0.7rem 0;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .login {
+    display: flex;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 70px;
+    width: auto;
   }
 }
