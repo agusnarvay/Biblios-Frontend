@@ -97,7 +97,7 @@ export function Perfil() {
         </div>
         <input type="submit" value="Añadir libro" />
       </form>
-      {/*
+
       <div className="coleccion-contenedor">
         <h2>Mi colección</h2>
         <div className="contenedor-libros">
@@ -108,7 +108,6 @@ export function Perfil() {
           )}
         </div>
       </div>
-      */}
     </div>
   )
 }

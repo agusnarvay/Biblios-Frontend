@@ -2,16 +2,10 @@ import "./App.css"
 import { Inicio } from "./paginas/Inicio"
 import { Explorar } from "./paginas/explorar"
 import { Perfil } from "./paginas/perfil"
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  NavLink,
-  useLocation,
-} from "react-router-dom"
-import Login from "./paginas/login"
 import { Navbar } from "./componentes/Navbar"
 import { Footer } from "./componentes/Footer"
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom"
+import Login from "./paginas/login"
 import { ProveedorLogin } from "./contexto/ContextoLogin"
 import { RutaPerfil } from "./componentes/RutaPerfil"
 
