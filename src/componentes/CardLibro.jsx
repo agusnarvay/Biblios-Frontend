@@ -10,6 +10,7 @@ export function CardLibro({ libro }) {
           src={libro.portadaUrl}
           alt={`Portada de ${libro.titulo}`}
           className="libro-portada"
+          loading="lazy"
         />
       </Link>
       <div className="libro-info">

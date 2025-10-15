@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useRef, useState } from "react"
 import { ContextoLogin } from "../contexto/ContextoLogin"
 import "../estilos/perfil.css"
 import { CardLibro } from "../componentes/CardLibro"
+import { useNavigate } from "react-router-dom"
 
 //página del perfil del usuario -> todos los usuarios tienen su propia página de perfil.
 
@@ -10,6 +11,8 @@ export function Perfil() {
   const { usuario } = useContext(ContextoLogin)
   const [libros, setLibros] = useState([])
   const formAgregarLibro = useRef()
+  const navigate = useNavigate()
+  const [errorMessage, setErrorMessage] = useState(null)
 
   useEffect(() => {
     if (usuario && usuario._id) getLibros() //se cargan los libros solo cuando está el usuario logueado
@@ -45,11 +48,19 @@ export function Perfil() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(nuevoLibro),
     }
+    try {
+      const response = await fetch(`${VITE_EXPRESS}/api/libros`, options)
+      const libroAgregado = await response.json()
 
-    await fetch(`${VITE_EXPRESS}/api/libros`, options)
+      if (!response.ok) {
+        throw new Error(libroAgregado.message || "Error al crear el libro")
+      }
 
-    getLibros()
-    formAgregarLibro.current.reset()
+      formAgregarLibro.current.reset()
+      navigate(`/libro/${libroAgregado._id}`)
+    } catch (error) {
+      setErrorMessage(null)
+    }
   }
 
   return (
