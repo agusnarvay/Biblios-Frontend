@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom"
 import Login from "./paginas/login"
 import { ProveedorLogin } from "./contexto/ContextoLogin"
 import { RutaPerfil } from "./componentes/RutaPerfil"
+import { DetalleLibro } from "./componentes/DetalleLibro"
 
 /*Lo utilice para manejar la lógical del menú - para que no sea visible en /login*/
 
@@ -39,6 +40,7 @@ function Layout() {
             }
           ></Route>
           <Route path="/login" element={<Login />}></Route>
+          <Route path="/libros/:id" element={<DetalleLibro />}></Route>
         </Routes>
       </div>
 
