@@ -29,6 +29,8 @@ export function Perfil() {
 
   const postLibro = async (e) => {
     e.preventDefault()
+    setErrorMessage(error.message)
+
     const { titulo, autor, genero, sinopsis, publicacion, portadaUrl, leido } =
       formAgregarLibro.current
 
@@ -57,9 +59,9 @@ export function Perfil() {
       }
 
       formAgregarLibro.current.reset()
-      navigate(`/libro/${libroAgregado._id}`)
+      navigate(`/libros/${libroAgregado._id}`)
     } catch (error) {
-      setErrorMessage(null)
+      setErrorMessage(error.message)
     }
   }
 
@@ -106,6 +108,7 @@ export function Perfil() {
           <input type="checkbox" id="leido" name="leido" />
           <label htmlFor="leido">¿Ya lo has leído?</label>
         </div>
+        {errorMessage && <p className="form-error-msg">{errorMessage}</p>}
         <input type="submit" value="Añadir libro" />
       </form>
 

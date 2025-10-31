@@ -1,23 +1,30 @@
+/*Estilos para la página de perfil*/
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
+/*Contenedor principal de la página de perfil*/
 .perfil-pagina {
-  max-width: 1100px;
-  margin: 0 auto;
+  max-width: 1100px; /*Limita el ancho máximo a 1100px*/
+  margin: 0 auto; /*Centra el contenedor*/
 }
+
+/*Titulo principal + Descripción */
+
 .encabezado-perfil {
-  max-width: 100%;
+  max-width: 100%; /*No excede el ancho del contenido*/
   text-align: center;
   margin-bottom: 1.5rem;
 }
 
 .encabezado-perfil h1 {
-  padding: 3rem;
+  padding: 3rem; /*Espacio grande para que el titulo entre de forma segura*/
   font-weight: 600;
-  color: #003049;
+  color: #003049; /*Color 'principal' de la página web*/
 }
 
 .encabezado-perfil p {
@@ -27,14 +34,15 @@
   color: #555;
   margin: 0 auto;
 }
+/*Formulario para agregar libros*/
 
 .form-libro {
   max-width: 1000px;
   margin: 0 auto;
-  display: flex;
+  display: flex; /*Se utilizó flex para organizar los elementos del formulario*/
   flex-direction: column;
   padding: 40px;
-  gap: 1.5rem;
+  gap: 1.5rem; /*Espacio entre los elementos del formulario*/
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.09);
   transition: all 0.3s ease;
@@ -47,24 +55,27 @@
   font-weight: 600;
   color: #003049;
 }
+
+/*Resalta el texto con el color azul secundario - cambia de color y se modifica el estilo a italic*/
 .encabezado-perfil h2 span {
   color: #669bbc;
   font-style: italic;
 }
 
+/*Contenedor para agrupar campos de formulario en una fila*/
 .fila-form {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /*Se pueden envolver a la siguiente linea si no hay espacio suficiente*/
   gap: 30px;
 }
 
 .form-libro input[type="text"],
 .form-libro input[type="number"],
 .form-libro textarea {
-  flex: 1;
+  flex: 1; /*Cada input se puede estirar*/
   min-width: 200px;
   background-color: transparent;
-  border: none;
+  border: none; /*Elimina bordes predeterminados*/
   border-bottom: 0.5px solid #669bbc;
   font-size: 1rem;
   padding: 8px 4px;
@@ -72,16 +83,17 @@
 }
 
 .form-libro textarea {
-  min-height: 100px;
-  resize: vertical;
+  min-height: 100px; /*Altura minima para el area de texto*/
+  resize: vertical; /*Se redimensiona SOLO de forma vertical*/
 }
 .portada input[type="text"] {
   width: 100%;
 }
 .form-libro ::placeholder {
-  padding-left: 10px;
+  padding-left: 10px; /*Añade padding al texto del placeholder*/
 }
 
+/*Estilo para cuando se hace click en el input*/
 .form-libro input:focus,
 .form-libro textarea:focus {
   outline: 0.3px solid #669bbc;
@@ -95,6 +107,8 @@
   width: 100%;
   color: #555;
 }
+
+/*Estilo para el botón de enviar formulario "submit"*/
 .form-libro input[type="submit"] {
   align-self: center;
   cursor: pointer;
@@ -110,20 +124,25 @@
   width: auto;
 }
 
+/*Efecto al pasar el cursor por encima*/
 .form-libro input[type="submit"]:hover {
   color: #e9f5ff;
   background-color: #669bbc;
 }
+
+/*Efecto para eliminar el contorno predeterminado*/
 .form-libro input[type="submit"]:focus {
   outline: none;
 }
+
+/*Efecto al hacer click en el boton de submit*/
 .form-libro input[type="submit"]:active {
   transform: translateY(1px);
 }
-
+/*El estilo de las tarjetas de los libros*/
 .contenedor-libros {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: grid; /*Cuadricula*/
+  grid-template-columns: repeat(4, 1fr); /*4 columnas de igual ancho*/
   padding: 0 60px;
   justify-content: center;
 }
@@ -135,137 +154,182 @@
   font-weight: 600;
   color: #003049;
 }
+/*Estilo para el mensaje de error del form*/
+.form-error-msg {
+  color: #b70d0d;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+}
 
+/*Se adaptan los tamaños para diferentes tipos de pantallas*/
 @media (max-width: 992px) {
   .pagina-perfil {
-    padding: 0 30px;
+    padding: 0 30px; /*Se da más espacio*/
   }
   .encabezado-perfil h1 {
-    font-size: 1.8rem;
-    padding: 2rem;
+    font-size: 2rem;
+    padding: 2.5rem 1.5rem;
   }
 
   .encabezado-perfil h2 {
-    font-size: 1.4rem;
-    padding: 1.5rem;
+    font-size: 1.6rem;
+    padding: 1.8rem 1rem;
   }
   .encabezado-perfil p {
-    max-width: 600px;
-    font-size: 1rem;
+    max-width: 650px;
+    font-size: 1.05rem;
   }
 
   .form-libro {
-    padding: 30px 20px;
-    gap: 1.2rem;
-    max-width: 95%;
+    padding: 30px;
+    gap: 1.3rem;
+    max-width: 90%;
   }
 
   .fila-form {
-    gap: 20px;
+    gap: 25px;
   }
   .form-libro input[type="text"],
   .form-libro input[type="number"],
   .form-libro textarea {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
   .form-libro input[type="submit"] {
-    padding: 0.9rem 1.8rem;
-    font-size: 0.85rem;
+    padding: 0.9rem 1.8rem; /*Padding del botón submit*/
+    font-size: 0.9rem;
+  }
+  .contenedor-libros {
+    grid-template-columns: repeat(
+      3,
+      minmax(160px, 1fr)
+    ); /*Se reduce a 3 por fila y minmax sirve para que las cards no queden tan pequeñas*/
+    padding: 0 30px;
+  }
+
+  .coleccion-contenedor {
+    padding: 1.8rem 1rem;
+    font-size: 1.6rem;
   }
 }
-
+/*Para pantallas más pequeñas*/
 @media (max-width: 768px) {
   .pagina-perfil {
-    padding: 0 15px;
-    margin: 15px auto;
+    padding: 0 20px;
+    margin: 20px auto;
   }
   .encabezado-perfil h1 {
-    font-size: 1.5rem;
-    padding: 1.5rem 1rem;
+    font-size: 1.8rem;
+    padding: 2rem 1rem;
   }
-  .encabezado-perfil p {
-    font-size: 0.9rem;
-    padding: 0 1rem;
+  .encabezado-perfil h2 {
+    font-size: 2.4rem;
+    padding: 1.5rem 0.8rem;
   }
 
-  .encabezado h2 {
-    font-size: 1.2rem;
-    padding: 1rem;
+  .encabezado-perfil p {
+    font-size: 0.95rem;
+    padding: 1.5rem 0.8rem;
   }
 
   .form-libro {
-    padding: 20px 15px;
+    padding: 25px 20px;
     gap: 1rem;
-    border-radius: 8px;
+    border-radius: 10px;
+    max-width: 95%; /*Asegura que no sea demasiado ancho*/
   }
 
   .fila-form {
-    flex-direction: column;
-    gap: 15px;
+    flex-direction: column; /*Se apilan de forma vertical*/
+    gap: 15px; /*Espacio entre los inputs*/
   }
 
   .form-libro input[type="text"],
   .form-libro input[type="number"],
   .form-libro textarea {
     width: 100%;
-    padding: 10px 0;
-    font-size: 0.95rem;
+    padding: 12px 0;
+    font-size: 0.9rem;
   }
   .form-libro input[type="submit"] {
     padding: 0.8rem 1.6rem;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
   }
 
   .form-libro textarea {
-    min-height: 80px;
+    min-height: 90px;
   }
 
   .form-leido {
-    font-size: 0.7rem;
-    gap: 10px;
+    font-size: 0.8rem;
+    gap: 12px;
+  }
+  .contenedor-libros {
+    grid-template-columns: repeat(
+      2,
+      minmax(140px, 1fr)
+    ); /*Se reduce a 3 por fila y minmax sirve para que las cards no queden tan pequeñas*/
+    padding: 0 20px;
+  }
+
+  .coleccion-contenedor {
+    padding: 1.5rem 0.8rem;
+    font-size: 1.4rem;
   }
 }
+
+/*Estilo para pantallas pequeñas - se reducen tamaños al mínimo*/
 @media (max-width: 480px) {
   .pagina-perfil {
-    padding: 0 10px;
-    margin: 10px auto;
+    padding: 0 15px;
+    margin: 15px auto;
   }
 
   .encabezado-perfil h1 {
-    font-size: 1.3rem;
-    padding: 1rem 0.5rem;
+    font-size: 1.5rem;
+    padding: 1.5rem 0.5rem;
   }
 
   .encabezado-perfil p {
-    font-size: 0.7rem;
+    font-size: 0.85rem;
   }
   .encabezado-perfil h2 {
-    font-size: 1rem;
-    padding: 0.8rem;
+    font-size: 1.2rem;
+    padding: 1.2rem 0.5rem;
   }
 
   .form-libro {
-    padding: 15px 10px;
+    padding: 20px 15px;
     gap: 0.8rem;
   }
 
   .fila-form {
-    gap: 12px;
+    gap: 10px;
   }
 
   .form-libro input[type="text"],
   .form-libro input[type="number"],
   .form-libro textarea {
-    padding: 12px 0;
-    font-size: 0.85rem;
+    padding: 10px 0;
+    font-size: 0.8rem;
   }
 
   .form-libro input[type="submit"] {
-    padding: 0.7rem 1.4rem;
-    font-size: 0.75rem;
+    padding: 0.7rem;
+    font-size: 0.8rem;
   }
 
   .form-leido {
-    font-size: 0.6rem;
+    font-size: 0.7rem;
+    gap: 8px;
+  }
+  .contenedor-libros {
+    grid-template-columns: 1fr; /*Se reduce a 1 por fila y minmax sirve para que las cards no queden tan pequeñas*/
+    padding: 0 20px;
+  }
+
+  .coleccion-contenedor {
+    padding: 1.2rem 0.5rem;
+    font-size: 1.2rem;
   }
 }
