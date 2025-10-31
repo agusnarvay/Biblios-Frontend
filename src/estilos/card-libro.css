@@ -1,43 +1,124 @@
+/*Es la base de la tarjeta del libro*/
 .libro-card {
-  width: 220px;
+  width: 220px; /*Es el ancho fijo que se ajustará con los media query*/
   margin: 20px;
-  display: flex;
+  display: flex; /*Lo apliqué para organizar los elementos internos (portada e info)*/
   flex-direction: column;
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fcfcfc; /*Reemplazo del blanco puro #ffffff*/
+  border-radius: 10px; /*Para una apariencia maás 'moderna'*/
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /*sombra negra con opacidad*/
   overflow: hidden;
   text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.libro-card:hover {
+  transform: translateY(-5px); /*Efecto al pasar el cursor por encima*/
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+/*Estilo para el contenedor con el enlace, para que funcione como un bloque clickeable*/
 .libro-link {
-  display: block;
+  display: block; /*Ocupa todo el espacio disponible*/
   text-decoration: none;
   overflow: hidden;
 }
 
+/*Estilo de la 'imagen' -> se usaron URLs para mayor facilidad a la hora de controlar y para que la página no sea tan pesada*/
 .libro-portada {
-  width: 100%;
+  width: 100%; /*Para que ocupe el 100% del ancho del contenedor*/
   height: 300px;
-  object-fit: cover;
-  display: block;
+  object-fit: cover; /*Recorta la imagen para que cubra completa el área*/
+  display: block; /*Elimina el espacio extra*/
 }
+
+/*Info del libro*/
 
 .libro-info {
-  padding: 20px 15px;
+  padding: 15px;
   text-align: left;
-  flex-grow: 1;
+  flex-grow: 1; /*Ayuda a que la card crezca si es necesario*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fcfcfc;
 }
 
 .libro-info h3 {
   font-size: 1rem;
   font-weight: 600;
-  color: #003049;
-  margin: 0 0 5px 0;
+  color: #003049; /*Es el color 'principal' de la web - hace que el titulo se destaque*/
+  margin: 0 0 8px 0;
   overflow: hidden;
 }
 
 .libro-info p {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
+  color: #555;
   margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media (max-width: 992px) {
+  .libro-card {
+    width: 200px; /*Se reduce el ancho de la tarjeta*/
+    margin: 15px; /*Se reduce el margen para que entren más tarjetas en la pantalla*/
+  }
+  .libro-portada {
+    height: 280px; /*Se ajusta la altura de la portada*/
+  }
+  .libro-info {
+    padding: 12px;
+  }
+  .libro-info h3 {
+    font-size: 0.95rem;
+  }
+  .libro-info p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /*Se ajustan los tamaños a pantallas medianas*/
+  .libro-card {
+    width: 180px;
+    margin: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /*Sombra sutil*/
+    border-radius: 8px;
+  }
+  .libro-portada {
+    height: 250px;
+  }
+  .libro-info {
+    padding: 10px;
+  }
+  .libro-info h3 {
+    font-size: 0.9rem;
+    margin-bottom: 5px; /*Menos margen debajo del título*/
+  }
+  .libro-info p {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .libro-card {
+    width: 100%;
+    max-width: 160px;
+    margin: 10px auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08); /*Sombra sutil*/
+  }
+  .libro-portada {
+    height: 220px;
+  }
+  .libro-info {
+    padding: 8px;
+  }
+  .libro-info h3 {
+    font-size: 0.85rem;
+  }
+  .libro-info p {
+    font-size: 0.7rem;
+  }
 }
