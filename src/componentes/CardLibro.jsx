@@ -5,7 +5,7 @@ import "../estilos/card-libro.css"
 export function CardLibro({ libro }) {
   return (
     <div className="libro-card">
-      <Link to={`/libro/${libro._id}`} className="libro-link">
+      <Link to={`/libros/${libro._id}`} className="libro-link">
         <img
           src={libro.portadaUrl}
           alt={`Portada de ${libro.titulo}`}
