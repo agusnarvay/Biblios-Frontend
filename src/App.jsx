@@ -1,6 +1,4 @@
 import "./App.css"
-import Inicio from "./paginas/inicio"
-import { Explorar } from "./paginas/explorar"
 import { Perfil } from "./paginas/perfil"
 import { Navbar } from "./componentes/Navbar"
 import { Footer } from "./componentes/Footer"
@@ -9,6 +7,7 @@ import Login from "./paginas/login"
 import { ProveedorLogin } from "./contexto/ContextoLogin"
 import { RutaPerfil } from "./componentes/RutaPerfil"
 import { DetalleLibro } from "./componentes/DetalleLibro"
+import Inicio from "./paginas/inicio"
 
 /*Lo utilice para manejar la lógical del menú - para que no sea visible en /login*/
 
