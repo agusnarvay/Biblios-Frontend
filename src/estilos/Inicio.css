@@ -1,0 +1,317 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*Estilo para toda la página*/
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  background-color: #fcfdfd;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+/*Estilo general de la página de inicio*/
+.pagina-inicio {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+section {
+  padding: 3rem 1rem;
+  margin-bottom: 2rem; /*Espacio entre secciones*/
+}
+
+.boton-principal {
+  display: inline-block;
+  background-color: #669bbc;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background-color 0.2s ease; /*Transición del color de fondo del boton principal*/
+}
+
+.boton-principal:hover {
+  background-color: #003049;
+}
+
+.boton-secundario,
+.boton-secundario-cta {
+  display: inline-block;
+  background-color: #003049;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background-color 0.2s ease; /*Transición del color de fondo del boton principal*/
+}
+
+.boton-secundario:hover,
+.boton-secundario-cta:hover {
+  background-color: #669bbc;
+}
+
+/*Texto con overlay*/
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  min-height: 250pxpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+.hero-imagen .portada-hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  filter: brightness(
+    0.3
+  ); /*Se le saca brillo para que el texto overlay se vea mejor*/
+}
+
+.hero-contenido-overlay {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+.hero-contenido-overlay h1 {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 1.5rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.hero-contenido-overlay p {
+  font-size: 1rem;
+  color: white;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+}
+
+/*Cómo agregar libros*/
+
+.agregar-libros {
+  text-align: center;
+  background-color: #f1faff;
+  padding: 3rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+.agregar-libros h2 {
+  font-size: 2rem;
+  color: #003049;
+  margin-bottom: 2.5rem;
+}
+
+.pasos-grid-agregar {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(280px, 1fr)
+  ); /*3 columnas con los 3 pasos a seguir*/
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.paso-numero {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  transition: trnasform 0.2s ease;
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.paso-numero h3 {
+  font-size: 1.5rem;
+  color: #003049;
+  margin-bottom: 1rem;
+}
+
+.paso-numero p {
+  font-size: 1rem;
+  color: #002233;
+}
+
+.boton-secundario-cta {
+  margin-top: 2rem;
+  background-color: #669bbc;
+  color: white;
+}
+
+.boton-secundario-cta:hover {
+  background-color: #003049;
+}
+
+/*Libros destacados*/
+
+.explorar-libros {
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.explorar-libros h2 {
+  font-size: 2rem;
+  color: #003049;
+  margin-bottom: 2.5rem;
+}
+
+.libros-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.sin-libros {
+  font-size: 1rem;
+  color: #002233;
+  margin-top: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .hero-section {
+    height: 45vh;
+    min-height: 220px;
+  }
+  .hero-imagen .portada-hero {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+  .agregar-libros {
+    padding: 2.5rem 1.5rem;
+    max-width: 90%;
+  }
+  .pasos-grid-agregar {
+    gap: 1.5rem;
+  }
+  .paso-numero {
+    margin-bottom: 1rem;
+  }
+  .explorar-libros {
+    padding: 2.5rem 0.8rem;
+    max-width: 90%;
+  }
+  .libros-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 2rem 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+  .hero-section {
+    height: 40vh;
+    min-height: 200px;
+  }
+  .hero-contenido-overlay h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .hero-contenido-overlay p {
+    font-size: 0.95rem;
+    margin-bottom: 1.6rem;
+  }
+  .boton-principal {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.95rem;
+  }
+  .agregar-libros {
+    padding: 2rem 1rem;
+    border-radius: 8px;
+    max-width: 95%;
+  }
+  .agregar-libros h2 {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+  .pasos-grid-agregar {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .explorar-libros {
+    padding: 2rem 1rem;
+    max-width: 95%;
+  }
+  .libros-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 1.5rem 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .hero-section {
+    height: 35vh;
+    min-height: 180px;
+  }
+  .hero-contenido-overlay h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+  }
+  .hero-contenido-overlay p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  .boton-principal {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+  }
+  .agregar-libros {
+    padding: 1.5rem 0.8rem;
+  }
+  .agregar-libros h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1.8rem;
+  }
+  .pasos-grid-agregar {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .explorar-libros {
+    padding: 1.5rem 0.8rem;
+  }
+  .explorar-libros h2 {
+    font-size: 1.4rem;
+  }
+  .paso-numero {
+    font-size: 0.9rem;
+    margin-bottom: 0.6rem;
+  }
+  .libros-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
