@@ -1,5 +1,5 @@
 import "./App.css"
-import { Inicio } from "./paginas/Inicio"
+import Inicio from "./paginas/inicio"
 import { Explorar } from "./paginas/explorar"
 import { Perfil } from "./paginas/perfil"
 import { Navbar } from "./componentes/Navbar"
