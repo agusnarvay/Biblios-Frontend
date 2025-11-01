@@ -24,12 +24,12 @@ export function Perfil() {
       `${VITE_EXPRESS}/api/libros?usuarioId=${usuario._id}`
     )
     const data = await response.json()
-    setLibros(data.data || data)
+    setLibros(data)
   }
 
   const postLibro = async (e) => {
     e.preventDefault()
-    setErrorMessage(error.message)
+    setErrorMessage(null)
 
     const { titulo, autor, genero, sinopsis, publicacion, portadaUrl, leido } =
       formAgregarLibro.current
@@ -41,8 +41,8 @@ export function Perfil() {
       sinopsis: sinopsis.value,
       publicacion: publicacion.value,
       portadaUrl: portadaUrl.value,
-      usuarioId: usuario._id,
-      leido: leido.checked,
+      usuarioId: usuario?._id,
+      leido: Boolean(leido.checked),
     }
 
     const options = {
