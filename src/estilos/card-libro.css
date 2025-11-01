@@ -45,7 +45,7 @@
 }
 
 .libro-info h3 {
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #003049; /*Es el color 'principal' de la web - hace que el titulo se destaque*/
   margin: 0 0 8px 0;
@@ -53,7 +53,7 @@
 }
 
 .libro-info p {
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: #555;
   margin: 0;
   white-space: nowrap;
@@ -72,10 +72,10 @@
     padding: 12px;
   }
   .libro-info h3 {
-    font-size: 0.95rem;
+    font-size: 1.5rem;
   }
   .libro-info p {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 }
 
@@ -94,11 +94,11 @@
     padding: 10px;
   }
   .libro-info h3 {
-    font-size: 0.9rem;
+    font-size: 1.3rem;
     margin-bottom: 5px; /*Menos margen debajo del título*/
   }
   .libro-info p {
-    font-size: 0.75rem;
+    font-size: 0.95rem;
   }
 }
 
@@ -116,9 +116,9 @@
     padding: 8px;
   }
   .libro-info h3 {
-    font-size: 0.85rem;
+    font-size: 1.2rem;
   }
   .libro-info p {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
   }
 }

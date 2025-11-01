@@ -52,7 +52,7 @@ function Login() {
     <div className="login-contenedor">
       <div className="login-header">
         <img src={logo} alt="BIBLIOS logo" className="login-logo" />
-        <h1>Inicia sesión en tu cuenta</h1>
+        <h3>Inicia sesión en tu cuenta</h3>
         <div className="login-tarjeta">
           <form onSubmit={enviarFormulario} className="login-form">
             <div className="input">

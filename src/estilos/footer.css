@@ -38,12 +38,12 @@
 }
 
 .footer-cr {
-  font-size: 0.85rem;
-  font-weight: 300;
+  font-size: 0.95rem;
+  font-weight: 400;
   color: #f8f9fa;
   margin-top: 0.5rem;
   text-align: center;
-  line-height: 1.4;
+  line-height: 1.6;
 }
 
 .footer-lista {
@@ -59,7 +59,7 @@
 /*Estilo enlaces*/
 .footer-lista a {
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 400;
   color: #ffffff;
   transition: color 0.2s ease-in-out;
@@ -101,7 +101,7 @@
     width: 140px;
   }
   .footer-cr {
-    font-size: 0.8rem;
+    font-size: 0.95rem;
   }
   .footer-lista a {
     font-size: 0.95rem;
@@ -116,7 +116,7 @@
     width: 120px;
   }
   .footer-cr {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
   }
   .footer-lista li {
     margin-bottom: 0.4rem;

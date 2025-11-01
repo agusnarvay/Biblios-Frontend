@@ -35,14 +35,13 @@
 
 /*Cargando...*/
 .detalles-libro-pag h1 {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   text-align: center;
   margin-bottom: 2rem;
 }
 
 .detalles-libro-pag .form.errormsg {
   color: #6c0303;
-  font-size: 1.3rem;
   margin-bottom: 1.5rem;
   text-align: center;
 }
@@ -114,17 +113,17 @@
   padding: 0;
 }
 .detalles-del-libro .titulo-libro h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   line-height: 1.2;
   margin-bottom: 0.5rem;
-  font-weight: 700;
+  font-weight: 600;
   color: #003049;
 }
 
 .detalles-del-libro .titulo-libro h2 {
-  font-size: 1.6rem;
-  line-height: 1.3;
-  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1.2;
+  font-weight: 600;
   color: #669bbc;
 }
 
@@ -138,7 +137,7 @@
 }
 
 .detalles-del-libro p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 0.8rem;
   text-align: left;
@@ -146,7 +145,7 @@
 }
 
 .detalles-del-libro h3 {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #003049;
   margin-top: 1.8rem;
@@ -220,7 +219,7 @@
 
 /*Titulo de la card*/
 .detalles-libro-pag .form-libro h2 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: #003049;
   text-align: center;
   margin-bottom: 1.8rem;
@@ -303,7 +302,7 @@
   padding: 0.9rem 2rem;
   border-radius: 8px;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 400;
   cursor: pointer;
   transition: all 0.2s ease;
   border: none;
@@ -340,21 +339,6 @@
   .detalles-del-libro .columna-texto {
     max-width: 550px;
   }
-  .detalles-del-libro .titulo-libro h1 {
-    font-size: 2.5rem;
-  }
-
-  .detalles-del-libro .titulo-libro h2 {
-    font-size: 1.3rem;
-  }
-
-  .detalles-del-libro p {
-    font-size: 1rem;
-  }
-
-  .detalles-del-libro h3 {
-    font-size: 1.2rem;
-  }
 
   .detalles-del-libro .acciones-libro {
     gap: 1.2rem;
@@ -362,7 +346,6 @@
   .detalles-del-libro .acciones-libro .boton-editar,
   .detalles-del-libro .acciones-libro .boton-eliminar {
     padding: 0.8rem 1.8rem;
-    font-size: 1rem;
   }
   /*Form de edición*/
   .detalles-libro-pag .form-libro {
@@ -441,7 +424,7 @@
   }
 
   .detalles-del-libro .titulo-libro h2 {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
   }
 
   .detalles-del-libro p {
@@ -450,7 +433,7 @@
   }
 
   .detalles-del-libro h3 {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
   }
@@ -473,7 +456,7 @@
     margin: 1.5rem auto;
   }
   .detalles-libro-pag .form-leido h2 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     margin-bottom: 1rem;
   }
 
@@ -535,7 +518,7 @@
   }
 
   .detalles-del-libro .titulo-libro h2 {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
   }
 
   .detalles-del-libro p {
@@ -544,7 +527,7 @@
   }
 
   .detalles-del-libro h3 {
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin-top: 1.2rem;
   }
 
@@ -565,7 +548,7 @@
     padding: 0.8rem;
   }
   .detalles-libro-pag .form-leido h2 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
 
   .detalles-libro-pag .form-libro .acciones-form {
