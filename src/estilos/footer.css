@@ -3,17 +3,24 @@
   padding: 0;
   box-sizing: border-box;
 }
+/*Contenedor principal del footer*/
 .footer-p {
+  font-family: "Poppins", sans-serif;
   background-color: #003049;
-  padding: 1.5rem 0;
-  border-top: 2px solid #f0f0f0;
+  padding: 2rem 0;
+  border-top: 2px solid #669bbc;
   color: #ffffff;
 }
+
+/*Contenedor interno*/
 .footer-contenedor {
-  display: flex;
+  display: flex; /*Organiza los elementos*/
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
 .columna1,
@@ -25,16 +32,18 @@
 
 .footer-logo {
   display: block;
-  width: 120px;
+  width: 160px;
   height: auto;
-  margin: 0.5rem auto;
+  margin: 0 auto 0.8rem auto;
 }
 
 .footer-cr {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 300;
   color: #f8f9fa;
   margin-top: 0.5rem;
+  text-align: center;
+  line-height: 1.4;
 }
 
 .footer-lista {
@@ -44,22 +53,24 @@
 }
 
 .footer-lista li {
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.8rem; /*Espacio debajo para cada elemento de la lista*/
 }
 
+/*Estilo enlaces*/
 .footer-lista a {
   text-decoration: none;
   font-size: 1rem;
   font-weight: 400;
   color: #ffffff;
   transition: color 0.2s ease-in-out;
+  display: inline-block;
 }
 
 .footer-lista a:hover {
   color: #669bbc;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   .footer-p {
     padding: 1.3rem 0;
   }
@@ -67,7 +78,7 @@
     padding: 0 3rem;
   }
   .footer-logo {
-    width: 110px;
+    width: 150px;
     margin-bottom: 0.5rem;
   }
   .footer-lista a {
@@ -80,16 +91,20 @@
 
 @media (max-width: 768px) {
   .footer-p {
-    padding: 0.8rem 0;
+    padding: 1.5rem 0;
+  }
+  .footer-contenedor {
+    padding: 0 1.2rem;
+    gap: 1.5rem;
   }
   .footer-logo {
-    width: 100px;
+    width: 140px;
   }
   .footer-cr {
     font-size: 0.8rem;
   }
   .footer-lista a {
-    font-size: 0.8rem;
+    font-size: 0.95rem;
   }
 }
 
@@ -98,7 +113,7 @@
     padding: 0 1rem;
   }
   .footer-logo {
-    width: 90px;
+    width: 120px;
   }
   .footer-cr {
     font-size: 0.7rem;

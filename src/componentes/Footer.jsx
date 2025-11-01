@@ -7,7 +7,9 @@ export function Footer() {
     <footer className="footer-p">
       <div className="footer-contenedor">
         <div className="columna1">
-          <img src={logo} alt="logo biblios" className="footer-logo" />
+          <NavLink to="/">
+            <img src={logo} alt="logo biblios" className="footer-logo" />
+          </NavLink>
         </div>
         <div className="columna2">
           <ul className="footer-lista">
