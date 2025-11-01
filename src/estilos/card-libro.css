@@ -60,7 +60,7 @@
   overflow: hidden;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   .libro-card {
     width: 200px; /*Se reduce el ancho de la tarjeta*/
     margin: 15px; /*Se reduce el margen para que entren más tarjetas en la pantalla*/

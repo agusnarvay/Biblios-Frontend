@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { ContextoLogin } from "../contexto/ContextoLogin"
+import "../estilos/detalle-libro.css"
 
 export function DetalleLibro() {
   const { id } = useParams() //Se necesitarán los id para manejar los libros del formulario, desde la URL
@@ -204,32 +205,51 @@ export function DetalleLibro() {
   // Si el libro cargó, muestra los detalles del mismo
   return (
     <div className="detalles-del-libro">
-      <div className="titulo-libro">
-        <h1>{libro.titulo}</h1>
-        <h2>por {libro.autor}</h2>
-      </div>
-      <img
-        src={libro.portadaUrl}
-        alt={`Portada de ${libro.titulo}`}
-        loading="lazy"
-        className="portada-titulo"
-      />
-      <p>Genero: {libro.genero}</p>
-      <p>Año: {libro.publicacion}</p>
-      <p>Estado: {libro.leido ? "Leido" : "Por leer"}</p>
-      <h3>sinopsis</h3>
-      <p>{libro.sinopsis}</p>
-
-      {usuario && libro.usuario === usuario._id && (
-        <div className="acciones-libro">
-          <button onClick={() => setModoEdicion(true)} className="boton-editar">
-            Editar libro
-          </button>
-          <button onClick={manejarEliminar} className="boton-eliminar">
-            Eliminar libro
-          </button>
+      <div className="contenido-grid">
+        <div className="columna-portada">
+          <img
+            src={libro.portadaUrl}
+            alt={`Portada de ${libro.titulo}`}
+            loading="lazy"
+            className="portada-titulo"
+          />
         </div>
-      )}
+
+        <div className="columna-texto">
+          <div className="titulo-libro">
+            <h1>{libro.titulo}</h1>
+            <h2>por {libro.autor}</h2>
+          </div>
+
+          <p>
+            <strong>Genero: </strong>
+            {libro.genero}
+          </p>
+          <p>
+            <strong>Año: </strong>
+            {libro.publicacion}
+          </p>
+          <p>
+            <strong>Estado:</strong> {libro.leido ? "Leido" : "Por leer"}
+          </p>
+          <h3>Sinopsis</h3>
+          <p className="sinopsis-texto">{libro.sinopsis}</p>
+
+          {usuario && libro.usuario === usuario._id && (
+            <div className="acciones-libro">
+              <button
+                onClick={() => setModoEdicion(true)}
+                className="boton-editar"
+              >
+                Editar libro
+              </button>
+              <button onClick={manejarEliminar} className="boton-eliminar">
+                Eliminar libro
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   )
 }
