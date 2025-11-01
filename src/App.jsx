@@ -29,7 +29,6 @@ function Layout() {
       <div className="contenedor-p">
         <Routes>
           <Route path="/" element={<Inicio />}></Route>
-          <Route path="/explorar" element={<Explorar />}></Route>
           <Route
             path="/perfil"
             element={
