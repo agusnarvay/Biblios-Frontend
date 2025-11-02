@@ -46,12 +46,6 @@ export function Navbar() {
               </NavLink>
             </li>
           )}
-
-          <li>
-            <NavLink to="/explorar" onClick={toggleMenu}>
-              Explorar
-            </NavLink>
-          </li>
         </ul>
         <div
           className={`navbar-login-click ${

@@ -19,9 +19,6 @@ export function Footer() {
             <li>
               <NavLink to="/perfil">Mi perfil</NavLink>
             </li>
-            <li>
-              <NavLink to="/explorar">Explorar</NavLink>
-            </li>
           </ul>
         </div>
         <p className="footer-cr">
