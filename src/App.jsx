@@ -4,10 +4,10 @@ import { Navbar } from "./componentes/Navbar"
 import { Footer } from "./componentes/Footer"
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom"
 import Login from "./paginas/login"
+import Inicio from "./paginas/inicio"
 import { ProveedorLogin } from "./contexto/ContextoLogin"
 import { RutaPerfil } from "./componentes/RutaPerfil"
 import { DetalleLibro } from "./componentes/DetalleLibro"
-import Inicio from "./paginas/TempInicio"
 /*Lo utilice para manejar la lógical del menú - para que no sea visible en /login*/
 
 function Layout() {
