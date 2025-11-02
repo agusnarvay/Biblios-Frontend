@@ -302,6 +302,7 @@ section {
   }
   .explorar-libros {
     padding: 1.5rem 0.8rem;
+    margin: 0 auto;
   }
   .explorar-libros h2 {
     font-size: 1.4rem;
