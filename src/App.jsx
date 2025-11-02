@@ -7,7 +7,7 @@ import Login from "./paginas/login"
 import { ProveedorLogin } from "./contexto/ContextoLogin"
 import { RutaPerfil } from "./componentes/RutaPerfil"
 import { DetalleLibro } from "./componentes/DetalleLibro"
-import Inicio from "./paginas/inicio"
+import Inicio from "./paginas/TempInicio"
 /*Lo utilice para manejar la lógical del menú - para que no sea visible en /login*/
 
 function Layout() {
