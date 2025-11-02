@@ -8,7 +8,6 @@ import { ProveedorLogin } from "./contexto/ContextoLogin"
 import { RutaPerfil } from "./componentes/RutaPerfil"
 import { DetalleLibro } from "./componentes/DetalleLibro"
 import Inicio from "./paginas/inicio"
-
 /*Lo utilice para manejar la lógical del menú - para que no sea visible en /login*/
 
 function Layout() {

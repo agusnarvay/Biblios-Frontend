@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import "../estilos/inicio.css"
 import portadaBiblio from "../assets/portadaBiblio.png"
-
 import { CardLibro } from "../componentes/CardLibro"
 
 const Inicio = () => {
